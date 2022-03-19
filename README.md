@@ -17,4 +17,5 @@ Here are some ideas to get you started:
 I'm Backend engineer.
 My blog - <a href="https://genie-love.tistory.com/">GenieLove</a>
 
-<img src="https://img.shields.io/badge/Go-#00ADD8?style=flat-square&logo=Go&logoColor=white"/>
+<img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=Go&logoColor=white"/>
+<img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=Go&logoColor=white"/>
