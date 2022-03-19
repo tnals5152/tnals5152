@@ -1,5 +1,4 @@
 ### Hi there 👋
-
 <!--
 **tnals5152/tnals5152** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -14,3 +13,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+I'm Backend engineer.
+My blog - <a href="https://genie-love.tistory.com/">GenieLove</a>
+
+<img src="https://img.shields.io/badge/Go-#00ADD8?style=flat-square&logo=Go&logoColor=white"/>
