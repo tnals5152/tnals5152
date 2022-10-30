@@ -11,7 +11,7 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 
-	r.POST("webhook", func(ctx *gin.Context) {
+	r.POST("", func(ctx *gin.Context) {
 		fmt.Println("Test")
 	})
 
