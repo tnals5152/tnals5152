@@ -29,8 +29,6 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          ping 127.0.0.1 -n 6 > nul
-          netstat -nao | findstr 8436
           type nul > C:/deploy/developers/filename3.txt
           
 
