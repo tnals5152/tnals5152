@@ -22,13 +22,12 @@ jobs:
         go-version: 1.19
       
     - name: executing remote ssh commands using key
-      uses: actions/checkout@v3
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-        script_stop: true
         script: |
           type nul > C:/deploy/developers/filename2.txt
           pwd
