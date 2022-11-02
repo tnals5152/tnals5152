@@ -30,7 +30,6 @@ jobs:
         port: 22
         script: |
           cmd /c "START /b C:/deploy/developers/jinjootest/run_script.bat"
-          ping 127.0.0.1 -n 6 > nul
           type nul > C:/deploy/developers/filename.txt
 
           
