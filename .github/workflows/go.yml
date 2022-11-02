@@ -31,8 +31,9 @@ jobs:
         script: |
           type nul > C:/deploy/developers/filename2.txt
           pwd
-          C:/deploy/developers/soomin.ps1
+          powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
           sleep 10 &&
           type nul > C:/deploy/developers/filename.txt
           
+
     
