@@ -28,8 +28,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-        run: |
-        START /b C:/deploy/developers/jinjootest/run_script.bat
+        script: |
+          START /b C:/deploy/developers/jinjootest/run_script.bat
           timeout 20
           type nul > C:/deploy/developers/filename3.txt
 
