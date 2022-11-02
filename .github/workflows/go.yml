@@ -35,5 +35,4 @@ jobs:
           sleep 10 &&
           type nul > C:/deploy/developers/filename.txt
           
-
     
