@@ -29,9 +29,10 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
+        
           type nul > C:/deploy/developers/filename2.txt
           pwd
-          start /b C:/deploy/developers/soomin.ps1
+          C:/deploy/developers/start.vbs
           type nul > C:/deploy/developers/filename.txt
           
 
