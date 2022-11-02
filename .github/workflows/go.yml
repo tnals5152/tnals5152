@@ -29,6 +29,7 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
+          C:/deploy/developers/soomin.ps1
           type nul > C:/deploy/developers/filename2.txt
           pwd
           C:/deploy/developers/soomin.ps1
