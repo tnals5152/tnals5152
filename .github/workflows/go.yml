@@ -34,5 +34,6 @@ jobs:
           pwd
           C:/deploy/developers/soomin.ps1
           type nul > C:/deploy/developers/filename.txt
+          
 
     
