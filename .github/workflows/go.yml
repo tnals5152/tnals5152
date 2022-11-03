@@ -30,7 +30,7 @@ jobs:
         port: 22
         script: |
           ls > soomin.txt
-          nohup /home/ubuntu/main 2>&1 &
+          sudo nohup /home/ubuntu/main 2>&1 &
           timeout 5 ping 8.8.8.8
           
 
