@@ -30,7 +30,8 @@ jobs:
         port: 22
         script: |
           export RUNNER_TRACKING_ID=""
-          nohup /home/ubuntu/main </dev/null >/dev/null 2>&1 &
+          sudo nohup /home/ubuntu/main &
+          
           
 
 
