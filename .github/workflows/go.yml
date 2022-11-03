@@ -30,6 +30,7 @@ jobs:
         port: 22
         script: |
           ls > soomin.txt
+          nohup /home/ubuntu/main 2>&1 &
           
 
 
