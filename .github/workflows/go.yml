@@ -32,7 +32,7 @@ jobs:
           RUNNER_TRACKING_ID=""
         script: |
           pwd
-          sudo nohup /home/ubuntu/main </dev/null >/dev/null 2>&1 &
+          sudo nohup main </dev/null >/dev/null 2>&1 &
           
           
 
