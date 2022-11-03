@@ -24,12 +24,12 @@ jobs:
     - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.DEVELOPERS }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.DEVELOPERS_KEY }}
+        host: ${{ secrets.EXTENSION_HOST }}
+        username: ${{ secrets.EXTENSION_USERNAME }}
+        key: ${{ secrets.EXTENSION_KEY }}
         port: 22
         script: |
-          PowerShell -Command "netstat -nao | findstr 8049" > text.txt
+          ls > soomin.txt
           
 
 
