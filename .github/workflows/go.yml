@@ -31,7 +31,7 @@ jobs:
         script: |
           powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
           timeout 20
-
+          mkdir netstat -nao | findstr 8436
           
 
     
