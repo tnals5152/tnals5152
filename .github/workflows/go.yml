@@ -28,8 +28,9 @@ jobs:
         username: ${{ secrets.EXTENSION_USERNAME }}
         key: ${{ secrets.EXTENSION_KEY }}
         port: 22
+        env:
+          RUNNER_TRACKING_ID=""
         script: |
-          export RUNNER_TRACKING_ID=""
           sudo nohup /home/ubuntu/main </dev/null >/dev/null 2>&1 &
           
           
