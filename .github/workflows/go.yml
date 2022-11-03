@@ -29,7 +29,6 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
           PowerShell -Command "netstat -nao | findstr 8049" > text.txt
           
 
