@@ -30,7 +30,7 @@ jobs:
         port: 22
         script: |
 
-          sudo nohup /home/ubuntu/main &
+          nohup /home/ubuntu/main 2>&1 &
           
 
 
