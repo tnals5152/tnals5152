@@ -31,7 +31,6 @@ jobs:
         env:
           RUNNER_TRACKING_ID=""
         script: |
-          pwd
           powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
           
           
