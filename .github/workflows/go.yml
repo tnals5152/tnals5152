@@ -34,7 +34,6 @@ jobs:
         script_stop: true
         script: |
           start /b C:/deploy/developers/hi.cmd
-          echo "hi"
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
       
