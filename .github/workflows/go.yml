@@ -27,7 +27,7 @@ jobs:
         
     - name: Build
       run: |
-        C:\deploy\developers\jinjootest\run_script.bat
+        C:/deploy/developers/jinjootest/run_script.bat
         ping 127.0.0.1 -n 6 > nul
       
 
