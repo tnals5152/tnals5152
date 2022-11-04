@@ -30,7 +30,8 @@ jobs:
         pwd
         go get .
         echo "finish go get"
-        go build -v ./..
+        go build -v ./main.go
+        ls
       
 
           
