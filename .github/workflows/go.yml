@@ -34,7 +34,7 @@ jobs:
         script: |
           cd C:/deploy/developers
           C:/deploy/developers/main.exe
-          ping 127.0.0.1 -n 60 > nul
+          ping 127.0.0.1 -n 60
       
 
           
