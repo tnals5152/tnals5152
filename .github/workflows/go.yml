@@ -34,7 +34,7 @@ jobs:
         script_stop: true
         script: |
           dir
-          cd C:/deploy/developers
+          cd ..
           dir
           start /b hi.cmd
           ping 127.0.0.1 -n 60 > nul
