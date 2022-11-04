@@ -32,7 +32,8 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          C:/deploy/developers/jinjootest/run_script.bat
+          cd C:/deploy/developers
+          C:/deploy/developers/main.exe
           ping 127.0.0.1 -n 60 > nul
       
 
