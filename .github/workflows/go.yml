@@ -33,7 +33,6 @@ jobs:
         port: 22
         script_stop: true
         script: |
-          echo "Test"
           C:/deploy/developers/hi.cmd
           echo "hi"
           ping 127.0.0.1 -n 60 > nul
