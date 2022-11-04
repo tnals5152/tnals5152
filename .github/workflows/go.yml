@@ -33,7 +33,7 @@ jobs:
         port: 22
         script: |
           echo "Test"
-          powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
+          C:/deploy/developers/hi.cmd
           echo "hi"
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
