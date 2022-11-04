@@ -24,15 +24,14 @@ jobs:
     - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.EXTENSION_HOST }}
-        username: ${{ secrets.EXTENSION_USERNAME }}
-        key: ${{ secrets.EXTENSION_KEY }}
+        host: ${{ secrets.DEVELOPERS }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         env:
           RUNNER_TRACKING_ID=""
         script: |
-          pwd
-          sudo nohup /home/ubuntu/main </dev/null >/dev/null 2>&1 &
+          cmd /c "START /b C:/deploy/developers/jinjootest/run_script.bat"
           
           
 
