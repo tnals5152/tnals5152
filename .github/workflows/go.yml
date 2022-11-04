@@ -29,6 +29,7 @@ jobs:
       run: |
         pwd
         go get .
+        echo "finish go get"
         go build -v ./..
       
 
