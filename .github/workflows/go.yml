@@ -31,7 +31,7 @@ jobs:
         env:
           RUNNER_TRACKING_ID=""
         script: |
-          powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
+          start /b C:/deploy/developers/main.exe
           timeout 5
           
           
