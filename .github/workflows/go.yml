@@ -32,9 +32,6 @@ jobs:
         script_stop: true
         continue-on-error: true
         script: |
-          dir
-          cd ..
-          dir
           start /b hi.cmd
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
