@@ -24,11 +24,17 @@ jobs:
       run: |
         go version
         
-        
-    - name: Build
-      run: |
-        C:/deploy/developers/jinjootest/run_script.bat
-        ping 127.0.0.1 -n 6 > nul
+    - name: executing remote ssh commands using key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEVELOPERS }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEVELOPERS_KEY }}
+        port: 22
+        script: |
+          C:/deploy/developers/jinjootest/run_script.bat
+          ping 127.0.0.1 -n 6 > nul
+
       
 
           
