@@ -25,7 +25,7 @@ jobs:
         go version
         
     - name: executing remote ssh commands using key
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@dce9d565de8d876c11d93fa4fe677c0285a66d78
       with:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
