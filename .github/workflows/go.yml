@@ -31,7 +31,6 @@ jobs:
         env:
           RUNNER_TRACKING_ID=""
         script: |
-          dir
           cd C:/deploy/developers/
           start /b C:/deploy/developers/main.exe
           timeout 5
