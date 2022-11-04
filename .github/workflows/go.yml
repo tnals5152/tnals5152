@@ -33,8 +33,9 @@ jobs:
         port: 22
         script: |
           cd C:/deploy/developers
-          start C:/deploy/developers/main.exe
-          ping 127.0.0.1 -n 60
+          cmd /c "start /b C:/deploy/developers/main.exe"
+          ping 127.0.0.1 -n 60 > nul
+          netstat -ano|findstr 8436
       
 
           
