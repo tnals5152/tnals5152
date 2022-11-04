@@ -31,7 +31,8 @@ jobs:
         env:
           RUNNER_TRACKING_ID=""
         script: |
-          cmd /c "START /b C:/deploy/developers/jinjootest/run_script.bat"
+          pwd
+          powershell.exe -noexit -file C:/deploy/developers/soomin.ps1
           
           
 
