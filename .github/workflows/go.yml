@@ -34,7 +34,9 @@ jobs:
         script_stop: true
         script: |
           dir
-          start /b C:/deploy/developers/hi.cmd
+          cd C:/deploy/developers
+          dir
+          start /b hi.cmd
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
       
