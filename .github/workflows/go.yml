@@ -33,7 +33,7 @@ jobs:
         port: 22
         script: |
           cd C:/deploy/developers
-          C:/deploy/developers/main.exe
+          C:/deploy/developers/main.exe > soominmain.txt
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
       
