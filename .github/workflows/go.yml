@@ -32,8 +32,9 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          cd C:/deploy/developers
+          echo "Test"
           C:/deploy/developers/main.exe > soominmain.txt
+          echo "hi"
           ping 127.0.0.1 -n 60 > nul
           netstat -ano|findstr 8436
       
