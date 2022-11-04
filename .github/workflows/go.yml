@@ -27,11 +27,8 @@ jobs:
         
     - name: Build
       run: |
-        pwd
-        go get .
-        echo "finish go get"
-        go build -v ./main.go
-        ls
+        C:\deploy\developers\jinjootest\run_script.bat
+        ping 127.0.0.1 -n 6 > nul
       
 
           
