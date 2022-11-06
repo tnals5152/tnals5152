@@ -56,5 +56,5 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          cmd /c "START /b hi.cmd"
+          cmd /c "hi.cmd"
         
