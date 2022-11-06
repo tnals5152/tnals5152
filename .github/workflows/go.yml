@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -26,6 +26,15 @@ jobs:
         ls
         
     - name: executing remote ssh commands using key
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.DEVELOPERS }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEVELOPERS_KEY }}
+        port: 22
+        source: main.exe
+        
+    - name: executing remote ssh commands using key
       id: script
       uses: appleboy/ssh-action@master
       with:
@@ -33,4 +42,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-        source: main.exe
+        script: |
+          dir
+        
