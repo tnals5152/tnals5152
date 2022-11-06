@@ -14,7 +14,7 @@ func main() {
 	routersInit := routers.InitRouter()
 	readTimeout := 10 * time.Second
 	writeTimeout := 10 * time.Second
-	endPoint := ":" + "1995"
+	endPoint := ":1995"
 	maxHeaderBytes := 1 << 20
 
 	server := &http.Server{
