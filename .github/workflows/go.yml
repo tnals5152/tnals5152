@@ -25,14 +25,18 @@ jobs:
         go build main.go
         ls
         
-    - name: executing remote ssh commands using key
+    - name: ls test
+      run: |
+        ls
+        
+    - name: executing remote scp commands using key
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-        source: main.exe
+        source: "main.exe"
         
     - name: executing remote ssh commands using key
       id: script
