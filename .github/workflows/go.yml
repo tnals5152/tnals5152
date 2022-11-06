@@ -57,6 +57,5 @@ jobs:
         command_timeout: 30
         port: 22
         script: |
-          main.exe > nul 2>&1
-          exit
+          C:/deploy/developers/soominTest.exe
         
