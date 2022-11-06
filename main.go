@@ -15,7 +15,7 @@ func main() {
 	readTimeout := 10 * time.Second
 	writeTimeout := 10 * time.Second
 	endPoint := ":" + "1995"
-	maxHeaderBytes := 1 << 20
+	maxHeaderBytesd := 1 << 20
 
 	server := &http.Server{
 		Addr:           endPoint,
