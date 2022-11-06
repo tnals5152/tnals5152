@@ -54,6 +54,7 @@ jobs:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
+        timeout-minutes: 30
         port: 22
         script: |
           main.exe > nul 2>&1
