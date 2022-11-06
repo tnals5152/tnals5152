@@ -1,0 +1,29 @@
+name: BuildTest
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+
+  Build_Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.19.3
+
+    - name: Build Test
+      run: |
+        go version
+        export GOOS=windows
+        export GOARCH=amd64
+        go build main.go
+        ls -al
+        
+
