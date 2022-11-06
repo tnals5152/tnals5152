@@ -37,7 +37,7 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         source: "main.exe"
-        target: "C:/Users/Administrator"
+        target: "soominTest"
         
     - name: executing remote ssh commands using key
       id: script
