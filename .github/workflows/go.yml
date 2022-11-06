@@ -1,14 +1,14 @@
 name: Go
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+      - dev
 
 jobs:
 
-  build:
+  Test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -16,45 +16,14 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19
-#     - name: test
-#       run: |
-#         go version
-#         export GOOS=windows
-#         export GOARCH=amd64
-#         go build main.go
-#         ls -al
-        
-    - name: ls test
+        go-version: 1.19.3
+
+    - name: Build Test
       run: |
-        tree
-#     - name: Copy single file to remote
-#       uses: garygrossgarten/github-action-scp@release
-#       with:
-#         local: main.exe
-#         remote: soominTest/main.exe
-#         host: ${{ secrets.DEVELOPERS }}
-#         username: ${{ secrets.USERNAME }}
-#         privateKey: ${{ secrets.DEVELOPERS_KEY }}
+        go version
+        export GOOS=windows
+        export GOARCH=amd64
+        go build main.go
+        ls -al
         
-#     - name: executing remote scp commands using key
-#       uses: appleboy/scp-action@master
-#       with:
-#         host: ${{ secrets.DEVELOPERS }}
-#         username: ${{ secrets.USERNAME }}
-#         key: ${{ secrets.DEVELOPERS_KEY }}
-#         port: 22
-#         source: "main.exe"
-#         target: "soominTest"
-        
-    - name: executing remote ssh commands using key
-#       id: script
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.DEVELOPERS }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.DEVELOPERS_KEY }}
-        port: 22
-        script: |
-          C:/deploy/developers/soominTest.exe
-        
+
