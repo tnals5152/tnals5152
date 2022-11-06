@@ -33,4 +33,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-#         source: 
+        source: main.exe
