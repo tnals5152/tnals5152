@@ -9,7 +9,7 @@ on:
 jobs:
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -20,6 +20,8 @@ jobs:
     - name: test
       run: |
         go version
+        go build main.go
+        ls
         
     - name: executing remote ssh commands using key
       id: script
@@ -29,10 +31,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
-        script_stop: true
-        continue-on-error: true
-        script: |
-          start /b hi.cmd
-          ping 127.0.0.1 -n 60 > nul
-          netstat -ano|findstr 8436
-    - run: echo '${{ steps.script.outputs.result }}'
+#         source: 
