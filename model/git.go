@@ -1,7 +1,7 @@
 package model
 
 type Git struct {
-	Ref        string     `json:"ref"`
+	Ref        sstring     `json:"ref"`
 	Pusher     Pusher     `json:"pusher"`
 	Repository Repository `json:"repository"`
 }
