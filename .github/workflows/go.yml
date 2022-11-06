@@ -33,9 +33,9 @@ jobs:
       with:
         local: main.exe
         remote: soominTest/main.exe
-        host: ${{ secrets.DEVELOPERS }}
-        username: ${{ secrets.USERNAME }}
-        privateKey: ${{ secrets.DEVELOPERS_KEY }}
+        host: ${{ secrets.EXTENSION_HOST }}
+        username: ${{ secrets.EXTENSION_USERNAME }}
+        privateKey: ${{ secrets.EXTENSION_KEY }}
         
 #     - name: executing remote scp commands using key
 #       uses: appleboy/scp-action@master
