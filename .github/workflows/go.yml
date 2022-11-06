@@ -28,24 +28,24 @@ jobs:
     - name: ls test
       run: |
         tree
-    - name: Copy single file to remote
-      uses: garygrossgarten/github-action-scp@release
+#     - name: Copy single file to remote
+#       uses: garygrossgarten/github-action-scp@release
+#       with:
+#         local: main.exe
+#         remote: soominTest/main.exe
+#         host: ${{ secrets.EXTENSION_HOST }}
+#         username: ${{ secrets.EXTENSION_USERNAME }}
+#         privateKey: ${{ secrets.EXTENSION_KEY }}
+        
+    - name: executing remote scp commands using key
+      uses: appleboy/scp-action@master
       with:
-        local: main.exe
-        remote: soominTest/main.exe
         host: ${{ secrets.EXTENSION_HOST }}
         username: ${{ secrets.EXTENSION_USERNAME }}
-        privateKey: ${{ secrets.EXTENSION_KEY }}
-        
-#     - name: executing remote scp commands using key
-#       uses: appleboy/scp-action@master
-#       with:
-#         host: ${{ secrets.DEVELOPERS }}
-#         username: ${{ secrets.USERNAME }}
-#         key: ${{ secrets.DEVELOPERS_KEY }}
-#         port: 22
-#         source: "main.exe"
-#         target: "soominTest"
+        key: ${{ secrets.EXTENSION_KEY }}
+        port: 22
+        source: "main.exe"
+        target: "soominTest"
         
     - name: executing remote ssh commands using key
       id: script
