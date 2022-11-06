@@ -56,5 +56,5 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          start /b main.exe > nul 2>&1
+          main.exe > nul 2>&1
         
