@@ -27,7 +27,7 @@ jobs:
         
     - name: ls test
       run: |
-        ls
+        tree
     - name: Copy single file to remote
       uses: garygrossgarten/github-action-scp@release
       with:
@@ -35,7 +35,7 @@ jobs:
         remote: soominTest/main.exe
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.DEVELOPERS_KEY }}
+        privateKey: ${{ secrets.DEVELOPERS_KEY }}
         
 #     - name: executing remote scp commands using key
 #       uses: appleboy/scp-action@master
