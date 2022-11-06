@@ -17,13 +17,13 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-    - name: test
-      run: |
-        go version
-        export GOOS=windows
-        export GOARCH=amd64
-        go build main.go
-        ls -al
+#     - name: test
+#       run: |
+#         go version
+#         export GOOS=windows
+#         export GOARCH=amd64
+#         go build main.go
+#         ls -al
         
     - name: ls test
       run: |
@@ -56,5 +56,5 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          cmd /c "hi.cmd"
+          powerShell Start-Process "main.exe" -WindowStyle Hidden
         
