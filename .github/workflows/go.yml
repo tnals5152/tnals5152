@@ -54,7 +54,6 @@ jobs:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
-        command_timeout: 30
         port: 22
         script: |
           C:/deploy/developers/soominTest.exe
