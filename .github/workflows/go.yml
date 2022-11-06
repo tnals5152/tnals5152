@@ -56,5 +56,5 @@ jobs:
         key: ${{ secrets.DEVELOPERS_KEY }}
         port: 22
         script: |
-          powerShell Start-Process "main.exe" -WindowStyle Hidden
+          start /b main.exe > nul 2>&1
         
