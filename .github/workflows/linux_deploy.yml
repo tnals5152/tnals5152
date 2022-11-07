@@ -42,7 +42,7 @@ jobs:
         script: |
           ls -al
           sudo mkdir backup/$(date "+%Y%m%d%H%M")
-          sudo mv ./main backup/$(date "+%Y%m%d%H%M")/
-          sudo rm ./main
+          sudo mv main backup/$(date "+%Y%m%d%H%M")/
+          sudo rm main
           sudo mv now/main ./
           sudo nohup ./main </dev/null >/dev/null 2>&1 &
