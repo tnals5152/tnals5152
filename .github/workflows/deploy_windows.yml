@@ -34,24 +34,29 @@ jobs:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         privateKey: ${{ secrets.DEVELOPERS_KEY }}
-        
-#     - name: executing remote scp commands using key
-#       uses: appleboy/scp-action@master
-#       with:
-#         host: ${{ secrets.DEVELOPERS }}
-#         username: ${{ secrets.USERNAME }}
-#         key: ${{ secrets.DEVELOPERS_KEY }}
-#         port: 22
-#         source: "main.exe"
-#         target: "soominTest"
+
         
     - name: executing remote ssh commands using key
 #       id: script
       uses: appleboy/ssh-action@master
+      env:
+        BUILDPATH: ${{ screts.PATH }}
       with:
-        host: ${{ secrets.DEVELOPERS }}
+        host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.DEVELOPERS_KEY }}
-        port: 22
+        key: ${{ secrets.KEY }}
+        envs: BUILDPATH
         script: |
-          dir
+          set CUR_YYYY=%date:~10,4%
+          set CUR_MM=%date:~4,2%
+          set CUR_DD=%date:~7,2%
+          set CUR_HH=%time:~0,2%
+          if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
+          set CUR_NN=%time:~3,2%
+          set CUR_SS=%time:~6,2%
+          set CUR_MS=%time:~9,2%
+          set SUBFILENAME=%CUR_YYYY%%CUR_MM%%CUR_DD%%CUR_HH%%CUR_NN%
+          mkdir %BUILDPATH%\backup\%SUBFILENAME%
+          copy %BUILDPATH%\main.exe %BUILDPATH%\backup\%SUBFILENAME%
+          taskkill /f /im main.exe
+          del %BUILDPATH%\main.exe
