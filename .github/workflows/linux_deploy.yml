@@ -34,13 +34,10 @@ jobs:
 
     - name: Deploy
       uses: appleboy/ssh-action@master
-      env:
-        BUILDPATH: ${{ screts.PATH }}
       with:
         host: ${{ secrets.EXTENSION_HOST }}
         username: ${{ secrets.EXTENSION_USERNAME }}
         key: ${{ secrets.EXTENSION_KEY }}
-        envs: BUILDPATH
         script: |
           sudo kill -9 $(pgrep main)
           sudo mkdir backup/$(date +"%Y%m%d%H")
