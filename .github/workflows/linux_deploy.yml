@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.EXTENSION_USERNAME }}
         key: ${{ secrets.EXTENSION_KEY }}
         source: "main"
-        target: "now/"
+        target: "now"
 #           sudo kill -9 $(pgrep main)
 #     - name: Deploy
 #       uses: appleboy/ssh-action@master
