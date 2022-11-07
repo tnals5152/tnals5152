@@ -39,13 +39,10 @@ jobs:
     - name: executing remote ssh commands using key
 #       id: script
       uses: appleboy/ssh-action@master
-      env:
-        BUILDPATH: ${{ secrets.PATH }}
       with:
         host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEVELOPERS_KEY }}
-        envs: BUILDPATH
         script: |
           set CUR_YYYY=%date:~10,4%
           set CUR_MM=%date:~4,2%
