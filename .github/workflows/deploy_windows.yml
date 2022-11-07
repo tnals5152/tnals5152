@@ -42,9 +42,9 @@ jobs:
       env:
         BUILDPATH: ${{ secrets.PATH }}
       with:
-        host: ${{ secrets.HOST }}
+        host: ${{ secrets.DEVELOPERS }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        key: ${{ secrets.DEVELOPERS_KEY }}
         envs: BUILDPATH
         script: |
           set CUR_YYYY=%date:~10,4%
