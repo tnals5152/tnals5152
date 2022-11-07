@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.EXTENSION_USERNAME }}
         key: ${{ secrets.EXTENSION_KEY }}
         source: "main"
-        target: "now/main"
+        target: "now/"
 #           sudo kill -9 $(pgrep main)
     - name: Deploy
       uses: appleboy/ssh-action@master
@@ -40,9 +40,9 @@ jobs:
         username: ${{ secrets.EXTENSION_USERNAME }}
         key: ${{ secrets.EXTENSION_KEY }}
         script: |
-
-          sudo mkdir backup/$(date +"%Y%m%d%H")
-          sudo mv ./main backup/$(date +"%Y%m%d%H")/
+          ls -al
+          sudo mkdir backup/$(date "+%Y%m%d%H%M")
+          sudo mv ./main backup/$(date "+%Y%m%d%H%M")/
           sudo rm main
           sudo mv now main
           sudo nohup ./main </dev/null >/dev/null 2>&1 &
