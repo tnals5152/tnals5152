@@ -22,6 +22,7 @@ jobs:
     - name: Build
       run: |
         go build main.go
+        ls -al
   
     - name: Scp
       uses: appleboy/scp-action@master
