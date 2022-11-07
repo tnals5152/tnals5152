@@ -33,16 +33,16 @@ jobs:
         source: "main"
         target: "now/"
 #           sudo kill -9 $(pgrep main)
-    - name: Deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EXTENSION_HOST }}
-        username: ${{ secrets.EXTENSION_USERNAME }}
-        key: ${{ secrets.EXTENSION_KEY }}
-        script: |
-          ls -al
-          sudo mkdir backup/$(date "+%Y%m%d%H%M")
-          sudo mv ./main backup/$(date "+%Y%m%d%H%M")/
-          sudo rm main
-          sudo mv now main
-          sudo nohup ./main </dev/null >/dev/null 2>&1 &
+#     - name: Deploy
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.EXTENSION_HOST }}
+#         username: ${{ secrets.EXTENSION_USERNAME }}
+#         key: ${{ secrets.EXTENSION_KEY }}
+#         script: |
+#           ls -al
+#           sudo mkdir backup/$(date "+%Y%m%d%H%M")
+#           sudo mv ./main backup/$(date "+%Y%m%d%H%M")/
+#           sudo rm main
+#           sudo mv now main
+#           sudo nohup ./main </dev/null >/dev/null 2>&1 &
