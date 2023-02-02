@@ -4,8 +4,9 @@
 name: Linux Build And Deploy
 
 on:
-  push:
-    branches: [ "main", "dev" ]
+  pull_request:
+    types: [opened, reopened]
+    branches: [main, dev]
 
 jobs:
 
@@ -17,32 +18,11 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19.3
+        go-version: 1.20
 
     - name: Build
       run: |
         go build main.go
         ls -al
   
-    - name: Scp
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.EXTENSION_HOST }}
-        username: ${{ secrets.EXTENSION_USERNAME }}
-        key: ${{ secrets.EXTENSION_KEY }}
-        source: "main"
-        target: "now/"
-          
-    - name: Deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EXTENSION_HOST }}
-        username: ${{ secrets.EXTENSION_USERNAME }}
-        key: ${{ secrets.EXTENSION_KEY }}
-        script: |
-          ls -al
-          sudo kill -9 $(pgrep main)
-          sudo mkdir backup/$(date "+%Y%m%d%H%M")
-          sudo mv main backup/$(date "+%Y%m%d%H%M")/
-          sudo mv now/main ./
-          sudo nohup ./main </dev/null >/dev/null 2>&1 &
+   
