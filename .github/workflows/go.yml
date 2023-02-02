@@ -1,30 +1,29 @@
-name: BuildTest
+name: Go Build Test
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
-      - dev
+    branches: [ "main" ]
 
 jobs:
 
-  Build_Test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
 
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19.3
+        go-version: 1.20
 
-    - name: Build Test
+    - name: build
       run: |
-        go version
-        export GOOS=windows
-        export GOARCH=amd64
-        go get github.com/muesli/cache2go
+        set GOPATH=$HOME/go
+        set GOOS=windows
+        set GOARCH=amd64
+        go env
+        go mod init main
+        go mod tidy
         go build main.go
-        ls -al
-        
-
