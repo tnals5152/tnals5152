@@ -26,35 +26,35 @@ jobs:
         ls -al
         
 
-    - name: Copy single file to remote
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        local: main.exe
-        remote: soominTest/main.exe
-        host: ${{ secrets.DEVELOPERS }}
-        username: ${{ secrets.USERNAME }}
-        privateKey: ${{ secrets.DEVELOPERS_KEY }}
+#     - name: Copy single file to remote
+#       uses: garygrossgarten/github-action-scp@release
+#       with:
+#         local: main.exe
+#         remote: soominTest/main.exe
+#         host: ${{ secrets.DEVELOPERS }}
+#         username: ${{ secrets.USERNAME }}
+#         privateKey: ${{ secrets.DEVELOPERS_KEY }}
 
         
-    - name: executing remote ssh commands using key
-#       id: script
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.DEVELOPERS }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.DEVELOPERS_KEY }}
-        script: |
-          set CUR_YYYY=%date:~10,4%
-          set CUR_MM=%date:~4,2%
-          set CUR_DD=%date:~7,2%
-          set CUR_HH=%time:~0,2%
-          if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
-          set CUR_NN=%time:~3,2%
-          set CUR_SS=%time:~6,2%
-          set CUR_MS=%time:~9,2%
-          set SUBFILENAME=%CUR_YYYY%%CUR_MM%%CUR_DD%%CUR_HH%%CUR_NN%
-          echo %SUBFILENAME%
-          mkdir C:/deploy/developers/backup/%SUBFILENAME%
-          copy C:/deploy/developers/main.exe C:/deploy/developers/backup/%SUBFILENAME%
-          taskkill /f /im main.exe
-          del C:/deploy/developers/main.exe
+#     - name: executing remote ssh commands using key
+# #       id: script
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.DEVELOPERS }}
+#         username: ${{ secrets.USERNAME }}
+#         key: ${{ secrets.DEVELOPERS_KEY }}
+#         script: |
+#           set CUR_YYYY=%date:~10,4%
+#           set CUR_MM=%date:~4,2%
+#           set CUR_DD=%date:~7,2%
+#           set CUR_HH=%time:~0,2%
+#           if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
+#           set CUR_NN=%time:~3,2%
+#           set CUR_SS=%time:~6,2%
+#           set CUR_MS=%time:~9,2%
+#           set SUBFILENAME=%CUR_YYYY%%CUR_MM%%CUR_DD%%CUR_HH%%CUR_NN%
+#           echo %SUBFILENAME%
+#           mkdir C:/deploy/developers/backup/%SUBFILENAME%
+#           copy C:/deploy/developers/main.exe C:/deploy/developers/backup/%SUBFILENAME%
+#           taskkill /f /im main.exe
+#           del C:/deploy/developers/main.exe
