@@ -10,7 +10,7 @@ import (
 
 func main() {
 	gin.SetMode("debug")
-ㅇ
+
 	routersInit := routers.InitRouter()
 	readTimeout := 10 * time.Second
 	writeTimeout := 10 * time.Second
