@@ -23,6 +23,7 @@ jobs:
         go version
         export GOOS=windows
         export GOARCH=amd64
+        go get github.com/muesli/cache2go
         go build main.go
         ls -al
         
